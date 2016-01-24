@@ -1,0 +1,68 @@
+<div class="page-header">
+<h1>Event list</h1>
+
+<span class="pull-right">
+	<%= link_to 'Add new', new_event_path, class: "btn btn-sm btn-default", remote: true %>
+</span>
+</div>
+
+<% if @events.present? %>
+<table class="table table-hover">
+  <thead>
+  <tr class="active">
+  <th>
+  		No
+  	</th>
+  	<th>
+  		Event Name
+  	</th>
+  	<th>
+  		Actions
+  	</th>
+  </tr>
+
+  </thead>
+  <tbody id="content">
+
+
+  <div class="debug">
+  </div>	
+    <%= render 'content' %>
+  
+  </tbody>
+</table>
+<% else %>
+	<div class="alert alert-warning"> There are no events. <%= link_to "Create One Now.", new_event_path, class: "btn btn-sm btn-default" %> </div>
+<% end %>
+<%= will_paginate @events %>
+
+<!-- Modal -->
+<div class="modal fade" id="new-event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Event</h4>
+      </div>
+      <div class="modal-body">
+        <div id="event-form" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="new-athleteevent-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Athlete to this Event</h4>
+      </div>
+      <div class="modal-body">
+        <div id="athlete-event-form" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+</div>

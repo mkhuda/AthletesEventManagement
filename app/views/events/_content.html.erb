@@ -1,0 +1,11 @@
+<% @events.each_with_index do |a, index| %>
+<tr class="tr-event-<%= a.id %>">
+<td class="events no-<%= a.id %> col-md-1"><%= @events.offset + index + 1 %></td>
+<td class="name col-md-4"><%= a.name %></td>
+<td class="edit col-md-2">
+<%= link_to (fa_icon "plus-square", text: 'Add Participants'), ae_path(a.id), class: "btn btn-sm btn-default"%>
+<%= link_to (fa_icon "eye"), event_path(a.id), class: "btn btn-sm btn-default" %>
+<%= link_to (fa_icon "trash"), event_path(a), remote: true, method: :delete, data: { confirm: "Apakah anda ingin menghapus ?" }, class: "btn btn-sm btn-danger"  %>
+</td>
+</tr>
+<% end %>

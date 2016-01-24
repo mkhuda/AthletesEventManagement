@@ -1,0 +1,16 @@
+<% @athletes.each_with_index do |a, index| %>
+<tr class="tr-athlete-<%= a.id %>">
+<td class="athletes no-<%= a.id %> col-md-1"><%= @athletes.offset + index + 1 %></td>
+<td class="name col-md-3"><%= a.name %></td>
+<td class="edit col-md-4">
+	<%= button_to ae_path(params[:event_id]), :method => :post, params: {:"tran[athlete_id]" => a.id, :"tran[event_id]" => params[:event_id]}, class: "btn btn-danger", :disabled => a.trans.where(:athlete_id => a.id).present?, form_class: "button-thing" do %>
+		<%= ("<i class='fa fa-plus-square-o'></i> Add").html_safe %>
+	<% end %>
+
+	<%= button_to ae_path(params[:event_id]), :method => :delete, params: {:"tran[athlete_id]" => a.id, :"tran[event_id]" => params[:event_id]}, class: "btn btn-default", :disabled => !a.trans.where(:athlete_id => a.id).present?, form_class: "button-thing" do %>
+		<%= ("<i class='fa fa-close'></i>").html_safe %>
+	<% end %>
+
+</td>
+</tr>
+<% end %>
