@@ -1,28 +1,15 @@
-== README
+== Rails HMT Association Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is really 'not simple' Rails project with HMT (Has Many Through) Association Table
 
-Things you may want to cover:
+Specs:
 
-* Ruby version
+* Ruby version 2.2.3p173
 
-* System dependencies
+* Rails 4.2.4
 
-* Configuration
+* Sqlite3
 
-* Database creation
+* For gems (see Gemfile)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Please feel free to contact me if any questions within this project
